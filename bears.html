@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ведмеді світу: види та де вони живуть</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700;800&display=swap&subset=cyrillic">
+<style>
+:root{
+  --bg:#f7f2ea; --surface:#fffdf8; --text:#2a2118; --muted:#6e6152;
+  --accent:#9a5b2c; --accent2:#c98a4b; --line:#e6dccb; --hero1:#4a2e17; --hero2:#8a5428;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#17120d; --surface:#221a13; --text:#f1e8da; --muted:#b3a490;
+    --accent:#e0a367; --accent2:#c98a4b; --line:#37291d; --hero1:#2a1a0d; --hero2:#6b3f1c;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17120d; --surface:#221a13; --text:#f1e8da; --muted:#b3a490;
+  --accent:#e0a367; --accent2:#c98a4b; --line:#37291d; --hero1:#2a1a0d; --hero2:#6b3f1c;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65}
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff6e8;padding:72px 22px 84px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"🐾";position:absolute;font-size:220px;opacity:.07;right:-20px;bottom:-60px;transform:rotate(-18deg)}
+.hero .tag{display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(255,246,232,.4);padding:6px 14px;border-radius:99px;margin-bottom:22px}
+.hero h1{font-family:var(--serif);font-size:clamp(34px,8vw,64px);line-height:1.1;margin:0 0 16px;font-weight:800}
+.hero p{max-width:620px;margin:0 auto;font-size:clamp(16px,2.4vw,19px);opacity:.92}
+.hero .emoji{font-size:64px;display:block;margin-bottom:10px}
+main{max-width:1040px;margin:0 auto;padding:0 20px}
+.intro{margin:-40px auto 40px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 14px 40px rgba(0,0,0,.1);position:relative}
+.intro h2,.section-title{font-family:var(--serif);font-size:clamp(26px,5vw,36px);margin:0 0 12px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:22px}
+.stat{text-align:center;padding:16px 8px;border-radius:14px;background:var(--bg);border:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-size:32px;color:var(--accent)}
+.stat span{font-size:13px;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 24px}
+.filters button{font:inherit;font-size:14px;padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;transition:.2s}
+.filters button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;margin-bottom:56px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(0,0,0,.12)}
+.card .ico{font-size:40px;width:68px;height:68px;border-radius:18px;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line);margin-bottom:14px}
+.card h3{font-family:var(--serif);font-size:23px;margin:0}
+.card i{color:var(--muted);font-size:14px}
+.card p{font-size:15px;margin:12px 0}
+.meta{margin-top:auto;display:grid;gap:6px;font-size:14px;border-top:1px dashed var(--line);padding-top:12px}
+.meta div{display:flex;justify-content:space-between;gap:10px}
+.meta span{color:var(--muted)}
+.badge{display:inline-block;font-size:12px;padding:3px 10px;border-radius:99px;font-weight:600;margin-top:12px;align-self:flex-start}
+.vu{background:#f3d9b5;color:#6b3a07}.lc{background:#d7ead0;color:#2d5a1c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .vu{background:#5a3a14;color:#ffd9a8}:root:not([data-theme="light"]) .lc{background:#274a1a;color:#c9eebb}}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px;margin-bottom:56px}
+.facts ul{padding-left:20px;margin:12px 0 0}.facts li{margin-bottom:10px}
+footer{background:var(--hero1);color:#f1e2cd;text-align:center;padding:36px 20px;font-size:15px}
+footer b{font-family:var(--serif);font-size:20px;display:block;margin-top:4px;color:#fff}
+.theme{position:fixed;right:14px;top:calc(env(safe-area-inset-top,0px) + 12px);z-index:5;border:0;border-radius:99px;width:42px;height:42px;font-size:18px;cursor:pointer;background:rgba(255,246,232,.9)}
+</style>
+</head>
+<body>
+<button class="theme" id="theme" aria-label="Змінити тему">🌗</button>
+
+<header class="hero">
+  <span class="emoji">🐻</span>
+  <span class="tag">Зоологія, реферативний проєкт</span>
+  <h1>Ведмеді світу</h1>
+  <p>У роботі розглянуто вісім сучасних видів ведмедів: як вони виглядають, де мешкають і чим харчуються.</p>
+</header>
+
+<main>
+  <section class="intro">
+    <h2>Про ведмедів коротко</h2>
+    <p>Ведмеді (лат. <i>Ursidae</i>) належать до родини великих ссавців ряду хижих. Проте більшість із них всеїдні: харчуються ягодами, корінням, комахами, рибою та м’ясом. Ці тварини живуть в Азії, Європі, Північній і Південній Америці. Білий ведмідь є найбільшим сухопутним хижаком, а найменшим видом вважається малайський ведмідь.</p>
+    <div class="stats">
+      <div class="stat"><b>8</b><span>сучасних видів</span></div>
+      <div class="stat"><b>4</b><span>континенти та Арктика</span></div>
+      <div class="stat"><b>до 700 кг</b><span>вага білого ведмедя</span></div>
+      <div class="stat"><b>6 з 8</b><span>видів вразливі</span></div>
+    </div>
+  </section>
+
+  <h2 class="section-title">Види ведмедів</h2>
+  <div class="filters" id="filters">
+    <button class="on" data-f="all">Усі</button>
+    <button data-f="eu">Європа</button>
+    <button data-f="as">Азія</button>
+    <button data-f="na">Пн. Америка</button>
+    <button data-f="sa">Пд. Америка</button>
+    <button data-f="ar">Арктика</button>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <section class="facts">
+    <h2 class="section-title">Цікаві факти</h2>
+    <ul>
+      <li>Узимку бурі ведмеді впадають не у справжню сплячку, а в зимовий сон, тому прокинутися вони можуть доволі легко.</li>
+      <li>Нюх ведмедя приблизно в 7 разів сильніший за нюх собаки.</li>
+      <li>Шкіра білого ведмедя чорна, а хутро прозоре й лише здається білим.</li>
+      <li>В Україні бурі ведмеді живуть переважно в Карпатах і занесені до Червоної книги України.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  Проєкт підготувала студентка
+  <b>Маргарита Поляшенко</b>
+  <div style="opacity:.7;margin-top:8px">Університетська робота, 2026</div>
+</footer>
+
+<script>
+const bears=[
+ {n:"Бурий ведмідь",l:"Ursus arctos",e:"🐻",r:["eu","as","na"],d:"Найпоширеніший вид. До нього належать гризлі та кодьяк. Живе в лісах і горах, всеїдний.",w:"від 100 до 600 кг",h:"Європа, Азія, Пн. Америка",s:"lc",st:"Найменша загроза"},
+ {n:"Білий ведмідь",l:"Ursus maritimus",e:"🐻‍❄️",r:["ar"],d:"Найбільший сухопутний хижак. Полює на тюленів на морському льоду, чудово плаває.",w:"від 300 до 700 кг",h:"Арктика",s:"vu",st:"Вразливий"},
+ {n:"Барибал",l:"Ursus americanus",e:"🐻",r:["na"],d:"Американський чорний ведмідь. Вправно лазить по деревах, хутро буває чорним, коричневим і навіть кремовим.",w:"від 60 до 300 кг",h:"Північна Америка",s:"lc",st:"Найменша загроза"},
+ {n:"Гімалайський ведмідь",l:"Ursus thibetanus",e:"🐻",r:["as"],d:"Азійський чорний ведмідь з білою V-подібною плямою на грудях. Мешкає в гірських лісах.",w:"від 65 до 200 кг",h:"Південна та Східна Азія",s:"vu",st:"Вразливий"},
+ {n:"Малайський ведмідь",l:"Helarctos malayanus",e:"🌴",r:["as"],d:"Найменший ведмідь, «сонячний». Має язик до 25 см для видобутку меду та комах.",w:"від 25 до 65 кг",h:"Південно-Східна Азія",s:"vu",st:"Вразливий"},
+ {n:"Ледачий ведмідь",l:"Melursus ursinus",e:"🐜",r:["as"],d:"Харчується термітами й мурахами, «всмоктуючи» їх крізь щілину в зубах.",w:"від 80 до 140 кг",h:"Індія, Шрі-Ланка",s:"vu",st:"Вразливий"},
+ {n:"Окулярний ведмідь",l:"Tremarctos ornatus",e:"👓",r:["sa"],d:"Єдиний ведмідь Південної Америки. Світлі кола навколо очей нагадують окуляри.",w:"від 60 до 200 кг",h:"Анди",s:"vu",st:"Вразливий"},
+ {n:"Велика панда",l:"Ailuropoda melanoleuca",e:"🐼",r:["as"],d:"Символ охорони природи. Майже вся її їжа складається з бамбука, якого вона з’їдає понад 12 кг на день.",w:"від 70 до 125 кг",h:"Центральний Китай",s:"vu",st:"Вразливий"}
+];
+const names={eu:"Європа",as:"Азія",na:"Північна Америка",sa:"Південна Америка",ar:"Арктика"};
+const grid=document.getElementById('grid');
+function render(f){
+  grid.innerHTML=bears.filter(b=>f==='all'||b.r.includes(f)).map(b=>`
+  <article class="card">
+    <div class="ico">${b.e}</div>
+    <h3>${b.n}</h3><i>${b.l}</i>
+    <p>${b.d}</p>
+    <div class="meta">
+      <div><span>Вага</span><b>${b.w}</b></div>
+      <div><span>Ареал</span><b>${b.h}</b></div>
+    </div>
+    <span class="badge ${b.s}">${b.st}</span>
+  </article>`).join('');
+}
+document.getElementById('filters').addEventListener('click',e=>{
+  const t=e.target.closest('button');if(!t)return;
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');render(t.dataset.f);
+});
+render('all');
+document.getElementById('theme').addEventListener('click',()=>{
+  const r=document.documentElement;
+  const dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme=dark?'light':'dark';
+});
+</script>
+</body>
+</html>
